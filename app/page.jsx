@@ -1,5 +1,15 @@
+import Hero from "@/components/hero";
+import InfoBoxes from "@/components/InfoBoxes";
+import HomeProperties from "@/components/HomeProperties";
+
 const HomePage = () => {
-  return <div className="text-2xl">Home Page</div>;
+  return (
+    <>
+      <Hero />
+      <InfoBoxes />
+      <HomeProperties />
+    </>
+  );
 };
 
 export default HomePage;
