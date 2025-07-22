@@ -52,7 +52,7 @@ const propertySchema = new mongoose.Schema(
     seller_info: {
       name: String,
       email: String,
-      Phone: String,
+      phone: String,
     },
     images: {
       type: [
