@@ -61,10 +61,6 @@ const propertySchema = new mongoose.Schema(
         },
       ],
     },
-    is_featured: {
-      type: Boolean,
-      default: false,
-    },
   },
   {
     timestamps: true,
