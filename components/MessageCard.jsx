@@ -3,18 +3,22 @@ import { useState } from "react";
 import markMessageAsSeen from "@/app/actions/markMessageAsSeen";
 import deleteMessage from "@/app/actions/deleteMessage";
 import { toast } from "react-toastify";
+import { useGlobalContext } from "@/context/globalContext";
 
 const MessageCard = ({ message }) => {
   const [isSeen, setIsSeen] = useState(message.seen);
+  const { setUnseenCount } = useGlobalContext();
 
   const handleMarkAsSeen = async () => {
     const seen = await markMessageAsSeen(message._id);
     setIsSeen(seen);
+    setUnseenCount((prev) => (seen ? prev - 1 : prev + 1));
     toast.success(`Marked as ${seen ? "Seen" : "Unseen"}`);
   };
 
   const handleDelete = async () => {
     await deleteMessage(message._id);
+    setUnseenCount((prev) => prev - 1);
     toast.success("Message Deleted");
   };
 
@@ -70,5 +74,4 @@ const MessageCard = ({ message }) => {
     </div>
   );
 };
-
 export default MessageCard;

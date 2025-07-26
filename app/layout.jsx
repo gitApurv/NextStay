@@ -1,9 +1,11 @@
 import "@/assets/styles/globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/footer";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "photoswipe/dist/photoswipe.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 import AuthProvider from "@/components/AuthProvider";
+import { GlobalProvider } from "@/context/globalContext";
 
 export const metadata = {
   title: "NextStay",
@@ -13,14 +15,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <AuthProvider>
-      <html lang="en">
-        <body>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html lang="en">
+          <body>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
   );
 }
