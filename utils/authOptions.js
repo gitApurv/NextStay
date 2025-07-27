@@ -6,7 +6,7 @@ export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_Secret,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       authorization: {
         params: {
           prompt: "consent",
@@ -16,8 +16,11 @@ export const authOptions = {
       },
     }),
   ],
+
   callbacks: {
     async signIn({ profile }) {
+      if (!profile?.email) return false;
+
       // Connect to the Database, Check if User Exist, If not create User, Return true to allow sign in
       await connectDB();
       const userExists = await User.findOne({ email: profile.email });
@@ -32,7 +35,7 @@ export const authOptions = {
     },
 
     async session({ session }) {
-      // Get user from database, Assign user id from session, Return session
+      // Get user from database, Assign user id to session, Return session
       const user = await User.findOne({ email: session.user.email });
       session.user.id = user._id.toString();
       return session;
