@@ -1,15 +1,34 @@
-<h1 align="center">Welcome to NextStay 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-</p>
+# 🏡 NextStay – Your Airbnb-Style Property Rental Platform
 
-> NextStay is a modern, Airbnb-inspired web application that enables users to list, discover, and manage rental properties with ease. Users can create and publish their own property listings, complete with images and details, and make them available to others searching for accommodations. A built-in search bar allows for quick filtering and discovery of listings based on user preferences.
+**NextStay** is a full-stack web application inspired by Airbnb, designed to make property listing and discovery seamless, interactive, and secure. It allows users to list their own properties, discover places to stay, and communicate directly with property owners—all within an intuitive interface.
 
-### 🏠 [Homepage](Visitors can bookmark their favorite properties, share listings with others, and directly message property listers. When a message is sent, the lister receives both the message content and the sender’s contact details, enabling easy communication. Each user has access to a personalized profile page where they can view all their listed properties, as well as edit or delete them at any time.)
 
-### ✨ [Demo](https://next-stay-ebon.vercel.app/)
 
-## Install
+## ✨ Key Features
+
+- 🏠 **List Your Property**: Users can easily list properties with detailed descriptions and images.
+- 🔍 **Browse & Search**: Explore available stays using a responsive listing page with a dynamic search bar to find your ideal property.
+- ❤️ **Bookmark Properties**: Save favorite properties for quick access later.
+- 🔗 **Share Listings**: Share any property with others using social links.
+- 💬 **Messaging System**: Interested users can send messages to the property lister, including their contact details.
+- 👤 **Profile Management**: View and manage all your listings from your personal profile. Edit or delete listings anytime.
+- 🔐 **Secure Authentication**: Robust user authentication and session management implemented with NextAuth.js.
+- 🔑 **Login with Google**: Sign in quickly using your Google account via OAuth integration.
+- 📱 **Responsive UI**: Fully responsive interface optimized for both mobile and desktop users.
+
+## 🛠️ Tech Stack
+
+- ⚛️ **Frontend**: [Next.js](https://nextjs.org/) – Fast, server-rendered React framework
+- 🔐 **Authentication**: [NextAuth.js](https://next-auth.js.org/) – Secure, flexible authentication solution
+- 🗄️ **Database**: [MongoDB](https://www.mongodb.com/) with Mongoose for schema modeling
+- ⚙️ **Backend**: API routes handled via Next.js built-in API routes
+
+## 🔒 Security
+
+- 🔑 Passwords are securely hashed using **bcrypt**
+- 🔒 Protected routes and session-based access control via **NextAuth.js**
+
+## 📦 Installation
 
 ```sh
 npm run build
@@ -20,16 +39,3 @@ npm run build
 ```sh
 npm run dev
 ```
-
-## Author
-
-👤 **Apurv Maurya**
-
-* Github: [@gitApurv](https://github.com/gitApurv)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
